@@ -20,7 +20,8 @@ class IconToggle extends PolymerElement {
 
       <!-- shadow DOM goes here -->
       <!-- <iron-icon icon="[[toggleIcon]]"></iron-icon><br>-->
-      <iron-icon icon="star"></iron-icon>
+      <h1> Web components </h1>
+      <iron-icon icon="[[toggleIcon]]"></iron-icon>
       <!-- <iron-icon icon="star"></iron-icon>
       <iron-icon icon="star"></iron-icon>
       <iron-icon icon="star"></iron-icon>
