@@ -9,21 +9,25 @@ class IconToggle extends PolymerElement {
   :host {
     display: inline-block;
   }
+
   iron-icon {
-    fill: rgba(0,0,0,0);
-    stroke: currentcolor;
-  }
-  :host([pressed]) iron-icon {
-    fill: currentcolor;
-  }
+      fill: var(--icon-toggle-color, rgba(0,0,0,0));
+      stroke: var(--icon-toggle-outline-color, currentcolor);
+    }
+    :host([pressed]) iron-icon {
+      fill: var(--icon-toggle-pressed-color, currentcolor);
+    }
+
 </style>
 
       <!-- shadow DOM goes here -->
       <!-- <iron-icon icon="[[toggleIcon]]"></iron-icon><br>-->
-      <h1> Web components </h1>
+
       <iron-icon icon="[[toggleIcon]]"></iron-icon>
-      <!-- <iron-icon icon="star"></iron-icon>
-      <iron-icon icon="star"></iron-icon>
+      <!-- <h1>[[toggleIcon]]</h1> -->
+
+        <!-- <iron-icon icon="add"></iron-icon>
+    <iron-icon icon="star"></iron-icon>
       <iron-icon icon="star"></iron-icon>
       <iron-icon icon="star"></iron-icon> -->
 
@@ -40,6 +44,11 @@ class IconToggle extends PolymerElement {
         value: false,
         notify: true,
         reflectToAttribute: true
+      },
+      thingCount: {
+        type: Number,
+        value: 0,
+        observer: '_thingCountChanged'
       }
     };
   }
@@ -52,6 +61,11 @@ class IconToggle extends PolymerElement {
   toggle() {
       this.pressed = !this.pressed;
     }
+
+    _thingCountChanged() {
+        console.log(`thing count is ${this.thingCount}`);
+      }
+
 }
 
 customElements.define('icon-toggle', IconToggle);
