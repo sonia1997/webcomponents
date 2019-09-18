@@ -1,5 +1,6 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import '@polymer/iron-icon/iron-icon.js';
+import 'https://unpkg.com/tonysoft@1.53.21/iron-icons.js'
+//import '@polymer/iron-icon/iron-icon.js';
 
 class IconToggle extends PolymerElement {
 
@@ -67,5 +68,6 @@ class IconToggle extends PolymerElement {
       }
 
 }
+
 
 customElements.define('icon-toggle', IconToggle);
